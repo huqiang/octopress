@@ -5,7 +5,7 @@
 url: http://Qiang.Hu
 title: A Hu Qiang Blog
 subtitle: I am Qiang, I am strong.
-author: Hu Qiang
+author: Qiang HU
 simple_search: http://google.com/search
 description:
 
@@ -16,7 +16,7 @@ description:
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
+subscribe_rss: http://feeds.feedburner.com/qianghu
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
@@ -72,7 +72,7 @@ twitter_show_follower_count: false
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
