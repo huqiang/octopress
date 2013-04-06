@@ -5,6 +5,7 @@ date: 2013-03-14 00:46
 comments: true
 categories: Linux
 tags: [ArchLinux, Samba, exFat]
+keywords: samba, linux, exfat, pi
 ---
 
 ### Update: 
@@ -17,6 +18,8 @@ And then mount the disk:
 ``` sh
 sudo mount -a
 ```
+
+---
 
 ---
 
@@ -41,11 +44,9 @@ After install the packages, we need to reboot the system:
 ```
 sudo reboot
 ```
-After rebooting, we should be able to mount the exFAT formatted disk
 <del>
-``` sh
+After rebooting, we should be able to mount the exFAT formatted disk  
 sudo mount -t exfat-fuse /dev/sda1 /media/Media
-```
 </del>
 ### Setup samba
 Install samba:
