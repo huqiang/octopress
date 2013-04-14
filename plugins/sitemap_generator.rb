@@ -146,7 +146,7 @@ module Jekyll
           url = fill_url(site, post)
           urlset.add_element(url)
         end
-
+        
         path = post.full_path_to_source
         date = File.mtime(path)
         last_modified_date = date if last_modified_date == nil or date > last_modified_date
@@ -238,7 +238,10 @@ module Jekyll
         # This is a page
         if posts_included?(page_or_post.name)
           # We want to take into account the last post date
-          final_date = greater_date(latest_date, @last_modified_post_date)
+          config_path  = File.join(Dir.pwd, "_config.yml")
+          config_date  = File.mtime(config_path)
+          final_date   = greater_date(latest_date, @last_modified_post_date)
+          final_date   = greater_date(final_date, config_date)
           lastmod.text = final_date.iso8601
         else
           lastmod.text = latest_date.iso8601
