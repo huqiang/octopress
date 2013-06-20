@@ -1,0 +1,31 @@
+#Setting language
+AddDefaultCharset UTF-8
+
+#Cache control
+# 480 weeks
+<FilesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=290304000, public"
+</FilesMatch>
+ 
+# 2 DAYS
+<FilesMatch ".(xml|txt)$">
+Header set Cache-Control "max-age=172800, public, must-revalidate"
+</FilesMatch>
+ 
+# 2 HOURS
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=7200, must-revalidate"
+</FilesMatch>
+
+RewriteEngine On
+
+#if it is not a file, append .html to the URI
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
+#remove trailing slash if exists
+RewriteRule ^(.*[^/])\/?$ $1.html [R=301,L]
+
+
+#set index.html for 404
+ErrorDocument 404 /index.html
