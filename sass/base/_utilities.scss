@@ -1,5 +1,5 @@
 @mixin mask-image($img, $repeat: no-repeat){
-  @include experimental(mask-image, image-url($img), -webkit, -moz, -o, -ms);
+  @include experimental(mask-image, image-url($img, false, false), -webkit, -moz, -o, -ms);
   @include experimental(mask-repeat, $repeat, -webkit, -moz, -o, -ms);
   width: image-width($img);
   height: image-height($img);
