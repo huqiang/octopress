@@ -27,5 +27,5 @@ RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
 RewriteRule ^(.*[^/])\/?$ $1.html [R=301,L]
 
 
-#set index.html for 404
-ErrorDocument 404 /index.html
+#set archives for 404
+ErrorDocument 404 /archives/index.html
