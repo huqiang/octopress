@@ -4,9 +4,13 @@ require "stringex"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "huqiangt@qiang.hu"
+##ssh_user       = "huqiangt@qiang.hu"
+
+ssh_user       = "huqiang@198.49.72.190"
+
 ssh_port       = "22"
-document_root  = "~/qiang.hu/"
+#document_root  = "~/public_html/"
+document_root  = "/www/qiang.hu/"
 rsync_delete   = true
 rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
@@ -113,6 +117,7 @@ task :new_post, :title do |t, args|
     post.puts "categories: "
     post.puts "description: "
     post.puts "keywords: "
+    post.puts "cover: """
     post.puts "---"
   end
 end
